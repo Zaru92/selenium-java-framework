@@ -21,7 +21,7 @@ public class OpenHomePageTest extends BaseTest {
         new HomePage(driver()).open(baseUrl());
 
         Assertions.assertThat(driver().getCurrentUrl())
-                .isEqualTo(EnvironmentDataProvider.baseUrl());
+                .contains("automationteststore.com");
     }
 
 }

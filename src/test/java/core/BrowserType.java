@@ -7,6 +7,9 @@ public enum BrowserType {
     SAFARI;
 
     public static BrowserType from(String value) {
-        return BrowserType.valueOf(value.toUpperCase());
+        if (value == null || value.trim().isEmpty()) {
+            return CHROME;
+        }
+        return BrowserType.valueOf(value.trim().toUpperCase());
     }
 }

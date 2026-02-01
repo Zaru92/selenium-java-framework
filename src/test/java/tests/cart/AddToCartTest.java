@@ -17,6 +17,7 @@ public class AddToCartTest extends BaseTest {
     @Story("Add product to Cart")
     @Severity(SeverityLevel.CRITICAL)
     void addToCart() {
+
         new HomePage(driver())
                 .open(baseUrl())
                 .addFirstProductToCart();

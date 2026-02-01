@@ -35,6 +35,13 @@ public class TestConfig {
     }
 
     private static String get(String key, String def) {
-        return System.getProperty(key, props.getProperty(key, def));
+        String sys = System.getProperty(key);
+        if (sys != null && !sys.trim().isEmpty()) return sys.trim();
+
+        String file = props.getProperty(key);
+        if (file != null && !file.trim().isEmpty()) return file.trim();
+
+        return def;
     }
+
 }
