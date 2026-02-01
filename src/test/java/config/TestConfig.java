@@ -29,7 +29,9 @@ public class TestConfig {
     }
 
     public static long timeoutSeconds() {
-        return Long.parseLong(get("timeoutSeconds", "10"));
+        String raw = get("timeoutSeconds", "10");
+        if (raw == null || raw.trim().isEmpty()) return 10L;
+        return Long.parseLong(raw.trim());
     }
 
     private static String get(String key, String def) {

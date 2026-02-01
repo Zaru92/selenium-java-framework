@@ -27,6 +27,11 @@ tasks.test {
     useJUnitPlatform()
     testLogging.showStandardStreams = true
     finalizedBy("allureReport")
+
+    systemProperty("browser", System.getProperty("browser"))
+    systemProperty("headless", System.getProperty("headless"))
+    systemProperty("baseUrl", System.getProperty("baseUrl"))
+    systemProperty("timeoutSeconds", System.getProperty("timeoutSeconds"))
 }
 
 allure {

@@ -21,6 +21,9 @@ public class BaseTest {
     @BeforeEach
     void setUp(TestInfo testInfo) {
         log.info("[{}] === START TEST: {} ===", Thread.currentThread().getName(), testInfo.getDisplayName());
+        log.info("System property browser = {}", System.getProperty("browser"));
+        log.info("Browser: {}", TestConfig.browser());
+
 
         WebDriver driver = DriverFactory.create();
         DriverManager.set(driver);
@@ -34,7 +37,7 @@ public class BaseTest {
 
     @AfterEach
     void tearDown(TestInfo testInfo) {
-        log.info("=== END TEST: {} ===", testInfo.getDisplayName());
+        log.info("[{}] === END TEST: {} ===", Thread.currentThread().getName(), testInfo.getDisplayName());
 
         DriverManager.quit();
     }
