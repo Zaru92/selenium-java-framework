@@ -11,15 +11,7 @@ public class CredentialsFactory {
         return new Credentials("wrong_user", "wrong_pass");
     }
 
-    public static Credentials empty() {
-        return new Credentials("", "");
-    }
-
-    public static Credentials from(String user, String pass) {
-        return new Credentials(user, pass);
-    }
-
-    public static Credentials validUser() {
+        public static Credentials validUser() {
         return new Credentials(TestConfig.validUsername(), TestConfig.validPassword());
     }
 

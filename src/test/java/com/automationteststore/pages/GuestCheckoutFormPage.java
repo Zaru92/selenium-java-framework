@@ -14,10 +14,6 @@ public class GuestCheckoutFormPage extends BasePage {
     private static final By CITY_INPUT = By.id("guestFrm_city");
     private static final By REGION_DROPDOWN = By.id("guestFrm_zone_id");
     private static final By ZIP_CODE_INPUT = By.id("guestFrm_postcode");
-    private static final By LOGIN_INPUT = By.id("guestFrm_loginname");
-    private static final By PASSWORD_INPUT = By.id("guestFrm_password");
-    private static final By PASSWORD_CONFIRM_INPUT = By.id("guestFrm_confirm");
-    private static final By PRIVACY_POLICY_BUTTON = By.id("guestFrm_agree");
     private static final By CONTINUE_BUTTON = By.cssSelector("[title=\"Continue\"]");
 
     public GuestCheckoutFormPage(WebDriver driver) {
@@ -67,21 +63,6 @@ public class GuestCheckoutFormPage extends BasePage {
 
     public GuestCheckoutFormPage typeZipCode(String zipCode) {
         type(ZIP_CODE_INPUT, zipCode);
-        return this;
-    }
-
-    public GuestCheckoutFormPage typeLogin(String login) {
-        type(LOGIN_INPUT, login);
-        return this;
-    }
-
-    public GuestCheckoutFormPage typePassword(String password) {
-        type(PASSWORD_INPUT, password);
-        return this;
-    }
-
-    public GuestCheckoutFormPage typePasswordConfirmation(String password) {
-        type(PASSWORD_CONFIRM_INPUT, password);
         return this;
     }
 
