@@ -161,7 +161,7 @@ build/reports/allure-report/index.html
 
 ### Run a single test
 ```bash
-./gradlew test --tests "tests.account.InvalidLoginTest.invalidLoginTest"
+./gradlew test --tests "com.automationteststore.tests.navigation.OpenHomePageTest"
 ```
 
 ### Force a local run

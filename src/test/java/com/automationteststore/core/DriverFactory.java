@@ -32,7 +32,6 @@ public class DriverFactory {
 
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
         options.addArguments("--window-size=1400,900");
 
         if (TestConfig.headless()) {
@@ -48,7 +47,8 @@ public class DriverFactory {
 
         FirefoxOptions options = new FirefoxOptions();
         options.setAcceptInsecureCerts(true);
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.addArguments("--width=1400");
+        options.addArguments("--height=900");
 
         if (TestConfig.headless()) {
             options.addArguments("-headless");
@@ -63,7 +63,6 @@ public class DriverFactory {
 
         EdgeOptions options = new EdgeOptions();
         options.setAcceptInsecureCerts(true);
-        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
         if (TestConfig.headless()) {
             options.addArguments("--headless=new");
